@@ -1,0 +1,16 @@
+<div class="home-container">
+  <h2> Last minute flights </h2>
+    <div *ngIf= "thereAreLastMinuteFlights()">
+      <div class="flights-grid">
+        <app-last-minute-flight 
+          *ngFor="let flight of lastMinuteFlights" 
+          [flight]="flight">
+        </app-last-minute-flight>
+      </div>
+    </div>
+    <div *ngIf= "!thereAreLastMinuteFlights()">
+      <p> There are no last minute flights available </p>
+    </div>
+    <app-flights-table></app-flights-table>
+  </div>
+  
